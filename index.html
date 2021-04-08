@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <title>Teste</title>
+</head>
+
+<body class="box-border bg-gradient-to-l from-blue-600 to-blue-400">
+    <!-- Abertura de escopo -->
+    <div class="grid grid-cols-1 md:grid-cols-2" x-data="{ tab: 'info' }">
+        <!-- Coluna direta -->
+        <div class="justify-center py-12 text-center bg-white md:min-h-screen lg:grid-cols-1 lg:flex-center sm:p-12">
+            <div class="h-0 md:h-2/5"></div>
+            <h1 class="mb-3 text-5xl">Hello World!</h1>
+            <!-- Botão de card -->
+            <div class="grid w-48 m-auto">
+                <button 
+                    class="p-1 px-2 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:ring-purple-400 focus:border-blue-600"  
+                    :class="{ 'active': tab === 'card' }" @click="tab = 'card' ">
+                    card
+                </button>
+                <!-- Botão info -->
+                <button 
+                    class="p-1 px-2 mt-3 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:ring-purple-400 focus:border-blue-600"
+                    :class="{ 'active': tab === 'info' }" @click="tab = 'info'">
+                        info
+                </button>
+            </div>
+            <div 
+            class="grid w-48 m-auto" 
+            x-data="{ open: false }">
+                <!-- Dropdown -->
+                <button 
+                class="self-center p-1 px-2 mt-3 bg-gray-100 border-2 rounded-md max-h-8 hover:bg-gray-200 focus:outline-none"
+                @click="open = true">
+                used technologies 
+                </button>
+                <ul 
+                class="-mt-1 text-left border-t-2"
+                x-show.transition="open" @click.away="open = false">
+                    <li class="p-1 pl-3 bg-white hover:bg-gray-100">AlpineJS</li>
+                    <li class="p-1 pl-3 bg-white hover:bg-gray-100">TailwindCSS</li>
+                    <li class="p-1 pl-3 bg-white hover:bg-gray-100">HTML</li>
+                    <li class="p-1 pl-3 bg-white hover:bg-gray-100">CSS</li>
+                    <li class="p-1 pl-3 bg-white rounded-b-md hover:bg-gray-100"><a href="https://github.com/pouthergust">continue a nadar...</a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- Coluna esquerda -->
+            <div class="flex flex-col justify-center sm:flex-none "> 
+                <!-- Cards -->           
+                <div 
+                class="items-center inline-block m-20 bg-white rounded-md sm:p-10 lg:flex md:my-0 text-center md:text-left"
+                x-show="tab === 'card'">
+                    <div class="flex-shrink-0">
+                        <img src="https://github.com/pouthergust.png" alt="Gabriel" 
+                        class="mx-auto rounded-full max-h-40 lg:ml-0" @click.away="tab = 'none'">
+                    </div>
+                    <div class="px-0 lg:px-5">
+                        <h2 class="text-3xl font-semibold">Gabriel henrique</h1>
+                        <p>Graphic Designer</p>
+                    </div>
+                </div>
+                <div 
+                class="items-center inline-block p-10 m-20 bg-white rounded-md md:my-0"
+                x-show="tab === 'info'">
+                    <!-- <div>
+                        <img src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Study" class="mx-auto rounded-full max-h-40 lg:ml-0" @click.away="tab = 'none'">
+                    </div> -->
+                    <div class="px-0 lg:px-5">
+                        <h2 class="text-3xl font-semibold mb-1">conhecimentos</h1>
+                        <ul>
+                            <li><strong>PETAL</strong> stack</li>
+                            <li>Frontend</li>
+                        </ul>
+                    </div>
+                    <hr class="my-5">
+                    <div class="px-0 lg:px-5">
+                        <h2 class="text-3xl font-semibold ">Interesses</h1>
+                            <p class="font-semibold mb-1 -mt-1">Desenvolver melhor a stack</p>
+                        <ul>
+                            <li><strong>P</strong>hoenix Framework</li>
+                            <li><strong>E</strong>lixir</li>
+                            <li><strong>T</strong>ailwind CSS</li>
+                            <li><strong>A</strong>lpine JS</li>
+                            <li><strong>L</strong>iveView</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+
+</html>
