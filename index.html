@@ -12,7 +12,7 @@
 
 <body class="box-border bg-gradient-to-l from-blue-600 to-blue-400">
     <!-- Abertura de escopo -->
-    <div class="grid grid-cols-1 md:grid-cols-2" x-data="{ tab: 'info' }">
+    <div class="grid grid-cols-1 md:grid-cols-2" x-data="{ tab: 'none' }">
         <!-- Coluna direta -->
         <div class="justify-center py-12 text-center bg-white md:min-h-screen lg:grid-cols-1 lg:flex-center sm:p-12">
             <div class="h-0 md:h-2/5"></div>
@@ -20,13 +20,13 @@
             <!-- Botão de card -->
             <div class="grid w-48 m-auto">
                 <button 
-                    class="p-1 px-2 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:ring-purple-400 focus:border-blue-600"  
-                    :class="{ 'active': tab === 'card' }" @click="tab = 'card' ">
+                    class="p-1 px-2 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:border-blue-600"  
+                    :class="{ 'active': tab === 'card' }" @click="tab = 'card' " >
                     card
                 </button>
                 <!-- Botão info -->
                 <button 
-                    class="p-1 px-2 mt-3 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:ring-purple-400 focus:border-blue-600"
+                    class="p-1 px-2 mt-3 bg-gray-100 border-2 rounded-md max-w-auto hover:bg-gray-200 focus:outline-none focus:border-blue-600"
                     :class="{ 'active': tab === 'info' }" @click="tab = 'info'">
                         info
                 </button>
@@ -37,7 +37,7 @@
                 <!-- Dropdown -->
                 <button 
                 class="self-center p-1 px-2 mt-3 bg-gray-100 border-2 rounded-md max-h-8 hover:bg-gray-200 focus:outline-none"
-                @click="open = true">
+                @click="open = true" >
                 used technologies 
                 </button>
                 <ul 
@@ -59,7 +59,7 @@
                 x-show="tab === 'card'">
                     <div class="flex-shrink-0">
                         <img src="https://github.com/pouthergust.png" alt="Gabriel" 
-                        class="mx-auto rounded-full max-h-40 lg:ml-0" @click.away="tab = 'none'">
+                        class="mx-auto rounded-full max-h-40 lg:ml-0" >
                     </div>
                     <div class="px-0 lg:px-5">
                         <h2 class="text-3xl font-semibold">Gabriel henrique</h1>
@@ -73,7 +73,7 @@
                         <img src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Study" class="mx-auto rounded-full max-h-40 lg:ml-0" @click.away="tab = 'none'">
                     </div> -->
                     <div class="px-0 lg:px-5">
-                        <h2 class="text-3xl font-semibold mb-1">conhecimentos</h1>
+                        <h2 class="text-3xl font-semibold mb-1 mx-auto">conhecimentos</h1>
                         <ul>
                             <li><strong>PETAL</strong> stack</li>
                             <li>Frontend</li>
